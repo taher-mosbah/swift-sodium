@@ -25,7 +25,7 @@ extension GenericHash {
                 opaqueState,
                 key, key?.count ?? 0,
                 outputLength
-            ).exitCode else { return nil }
+                ).exitCode else { return nil }
 
             self.outputLength = outputLength
         }
@@ -65,7 +65,7 @@ extension GenericHash {
             &output, outputLength,
             message, UInt64(message.count),
             key, key?.count ?? 0
-        ).exitCode else { return nil }
+            ).exitCode else { return nil }
 
         return output
     }
@@ -132,7 +132,7 @@ extension GenericHash.Stream {
         return .SUCCESS == crypto_generichash_update(
             opaqueState,
             input, UInt64(input.count)
-        ).exitCode
+            ).exitCode
     }
 
     /**
@@ -146,7 +146,7 @@ extension GenericHash.Stream {
         guard .SUCCESS == crypto_generichash_final(
             opaqueState,
             &output, outputLen
-        ).exitCode else { return nil }
+            ).exitCode else { return nil }
 
         return output
     }
